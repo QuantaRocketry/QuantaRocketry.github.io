@@ -1,3 +1,10 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = 'https://QuantaRocketry.github.io'
+languageCode = 'en-au'
+title = 'Quanta Rocketry'
+
+pluralizelisttitles = false
+
+[outputs]
+page = ["HTML"]
+home = ["HTML"]
+section = ["HTML"]

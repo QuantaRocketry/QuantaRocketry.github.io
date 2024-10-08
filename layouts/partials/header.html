@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ if not .IsHome }}{{.Title}} - {{ end }}Quanta Rocketry</title>
+    <link rel="stylesheet" href="/css/main.css?{{ slicestr (readFile "static/css/main.css" | md5) 0 8 }}">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link id="favicon" rel="icon" href="/img/">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Noto+Sans+JP:wght@300;500;700&family=Noto+Serif+JP:wght@200;500&family=Varela+Round&display=swap" rel="stylesheet">
+    {{ if .OutputFormats.Get "RSS" }}
+    <link href="{{ (.OutputFormats.Get "RSS").RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ if not .IsHome }}{{.Title}} - {{ end }}Quanta Rocketry" />
+    <link href="{{ (.OutputFormats.Get "RSS").RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ if not .IsHome }}{{.Title}} - {{ end }}Quanta Rocketry" />
+    {{ end }}
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:creator" content="" />
+    <meta name="twitter:title" content="{{ if not .IsHome }}{{.Title}} - {{ end }}Quanta Rocketry" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:image:width" content="256">
+    <meta name="twitter:image:height" content="256">
+
+    <meta property="og:image" content="">
+    <meta property="og:title" content="{{ if not .IsHome }}{{.Title}} - {{ end }}Quanta Rocketry">
+</head>
+<body class="{{ .Scratch.Get "body_class" }}">
+    <header id="header">
+        <div class="header-logo">
+            <!-- <a href="/"><img src="/img/some_logo.svg?{{ slicestr (readFile "static/img/some_logo.svg" | md5) 0 8 }}" class="logo" alt=""></a> -->
+            <a href="/">Quanta Rocketry</a>
+        </div>
+        <div class="header-menu">
+            <ul class="menu-container flex-container">
+                <li><a href="/about">About</a></li>
+                <li><a href="/devices">Devices</a></li>
+                <!-- <li><a href="/contribute">Contribute</a></li> -->
+                <!-- <li><a href="">GitHub</a></li> -->
+                <!-- <li><a href="">Wiki</a></li> -->
+                <!-- <li><a href="/blog">Blog</a></li> -->
+                <!-- <li><a href="/support">Donate</a></li> -->
+            </ul>
+        </div>
+    </header>
